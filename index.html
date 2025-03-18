@@ -10,6 +10,78 @@
  /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@300;400;700&family=Bayon&display=swap');
 
+
+.faq-item {
+            margin-bottom: 5px;
+            border: 2px solid #ff007f;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 6px; /* Smaller padding */
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 0.45em; /* Smaller FAQ question text */
+            border-bottom: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .faq-question.active::after {
+            content: '-';
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            background: white;
+            color: #111;
+            border-top: 2px solid #ff007f;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+        }
+        .faq-answer.visible {
+            max-height: 500px;
+            opacity: 1;
+            padding: 10px;
+        }
+
+
+        .prompt-box, .toggle-container {
+        margin: 20px 0;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid #ff007f;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .prompt-text {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .toggle-btn {
+        background: #ff007f;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .toggle-content {
+        display: none;
+        padding: 10px;
+        background: white;
+        border: 2px solid #ff007f;
+    }
+
+
 body {
     font-family: "Sono", monospace;
     font-optical-sizing: auto;
@@ -83,7 +155,7 @@ body {
     font-family: 'Bayon', sans-serif;
     font-size: 1.6em;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 .sidebar h2 {
@@ -99,7 +171,7 @@ body {
 }
 
 .sidebar ul li {
-    margin-bottom: 16px;
+    margin-bottom: 29px;
 }
 
 .sidebar ul li a {
@@ -189,25 +261,54 @@ html {
     100% { opacity: 0.85; }
 }
 
-/* Responsive Design Adjustments */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        font-size: 1.4em;
-    }
-    .intro-message h1 {
-        font-size: 3.5em;
-    }
-    .content {
-        margin-left: 0;
-        font-size: 1.3em;
-    }
-}
+
+
+
+  /* Responsive Styles */
+  @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                font-size: 1.3em;
+                padding: 10px;
+                text-align: center;
+            }
+            
+            .intro-message {
+                font-size: 3em;
+                padding: 50px 10px;
+                text-align: center;
+                line-height: 1.2;
+            }
+            
+            .content {
+                margin-left: 0;
+                font-size: 1.2em;
+                padding: 15px;
+            }
+            
+            /* Buttons and Input Fields */
+            button, input, textarea {
+                font-size: 1.1em;
+                padding: 12px;
+            }
+
+            .faq-question {
+                font-size: 1.2em;
+                padding: 12px;
+            }
+
+            .contact-form {
+                padding: 20px;
+                font-size: 1.1em;
+            }
+        }
 
 
     </style>
@@ -224,18 +325,32 @@ html {
         <nav class="sidebar">
             <h2>Table of Contents</h2>
             <ul>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#why-zines">Why Zines?</a></li>
                 <li><a href="#core-values">Core Values of Zine-Making</a></li>
                 <li><a href="#formats">Genres & Formats</a></li>
                 <li><a href="#making">Making a Zine</a></li>
+                <li><a href="#walkthrough">Walkthrough</a></li>
                 <li><a href="#distribution">Distribution & Impact</a></li>
                 <li><a href="#resources">Resources & References</a></li>
-                <li><a href="#urgency">Why Now? The Urgency of Zines</a></li>
+                <li><a href="#urgency">Urgency</a></li>
+                <li><a href="#faq">FAQs</a></li>
             </ul>
         </nav>
         
+        
+        
         <main class="content">
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Have questions? Want help? Need emotional support? Email me or fill out the form below.</p>
+    <p><strong>Email:</strong> <a href="mailto:disruptivezines@gmail.com">disruptivezines@gmail.com</a></p>
+    
+</section>
+
 
             <section id="introduction">
                 <h1>Introduction</h1>
@@ -346,6 +461,11 @@ html {
                         <li><strong>Accordion Fold:</strong> A continuous, unfolding zine.</li>
                         <li><strong>Mixed Media Binding:</strong> Stitched, sewn, or glued.</li>
                     </ul>
+
+                    <div style="text-align: center;">
+    <img src="https://www.42ndstreet.org.uk/media/etdlxppk/zine-guide-colour.jpg" alt="Zine Guide Cover" width="800">
+</div>
+
                     <!-- Suggested image: Step-by-step folding guide for an 8-panel zine. -->
                     
                     <h4>📎 Binding Methods</h4>
@@ -391,6 +511,134 @@ html {
                     <!-- Suggested image: A step-by-step photo series of a zine being printed and assembled. -->
                 </section>
             </section>
+
+
+
+
+            <section id="walkthrough">
+    <h2>Get Started: A Guided Walkthrough</h2>
+    <p><strong>Start making—no hesitation, no overthinking.</strong> This is a step-by-step interactive guide to get you from an idea to a finished zine.</p>
+    
+    <h3>Step 1: Write Without Thinking</h3>
+    <p>Pick a prompt, **set the timer, and write for 5 minutes.** Don't edit, don't hesitate. Just let words spill onto the page.</p>
+    <button onclick="startTimer(300)">Start 5-Minute Timer</button>
+    <p id="timer-display"></p>
+    
+    <div class="prompt-box">
+        <h4>Click to Reveal a Random Prompt</h4>
+        <button onclick="getRandomPrompt()">Give Me a Prompt</button>
+        <p id="random-prompt" class="prompt-text"></p>
+    </div>
+    
+    <h3>Step 2: Find the Thread</h3>
+    <p>Take a moment to look at what you just wrote. You don’t have to use all of it—or even most of it. **Find one word, one phrase, or one weird idea that jumps out at you.** It doesn’t have to be good. It just has to spark something.</p>
+    <p>Still not feeling it? Click below to get a new, randomized way to twist your idea:</p>
+    
+    <div class="prompt-box">
+        <h4>Click to Get a New Angle</h4>
+        <button onclick="getRandomRework()">Give Me a Twist</button>
+        <p id="random-rework" class="prompt-text"></p>
+    </div>
+    <p>Once something clicks, roll with it. No second-guessing. Now, let’s decide how to shape it into a zine.</p>
+    <h3>Step 3: Choose Your Format</h3>
+    <p>Now that you've written something, let's decide what kind of zine you want to make.</p>
+    <div class="toggle-container">
+        <button class="toggle-btn" onclick="toggleDropdown('format-options')">Choose a Zine Format</button>
+        <div id="format-options" class="toggle-content">
+            <ul>
+                <li><strong>8-Panel Fold:</strong> A single-page zine with a clever fold.</li>
+                <li><strong>Half-Page Booklet:</strong> A staple-bound mini-magazine.</li>
+                <li><strong>Accordion Fold:</strong> A continuous unfolding zine.</li>
+                <li><strong>One-Page Collage:</strong> No structure, just vibes.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h3>Step 3: Map Your Zine</h3>
+    <p>Sketch out an **8-page layout** for your zine. This can be rough! Here's an example:</p>
+    <img src="https://thealohastudios.com/wp-content/uploads/2021/05/tas_mini-zine_template-480x371.jpg" alt="Zine Guide Example" style="width: 100%; max-width: 600px; display: block; margin: 20px auto; border: 3px solid #ff007f;">
+    <p><strong>Page Breakdown:</strong></p>
+    <ul>
+        <li><strong>Page 1:</strong> Cover / Hook</li>
+        <li><strong>Page 2:</strong> Opening statement / first weird idea</li>
+        <li><strong>Pages 3-6:</strong> The heart of your zine (stories, lists, collage, etc.)</li>
+        <li><strong>Page 7:</strong> Closing thought</li>
+        <li><strong>Page 8:</strong> A call to action or something to leave behind</li>
+    </ul>
+    
+    <h3>Step 4: Build It</h3>
+    <p>Decide how you'll create your zine:</p>
+    <ul>
+        <li><strong>Handmade:</strong> Scissors, glue, collage, and a photocopier.</li>
+        <li><strong>Digital:</strong> Use Canva, Scribus, or Photoshop.</li>
+        <li><strong>Hybrid:</strong> Draw by hand, then scan and edit.</li>
+    </ul>
+    
+    <h3>Step 5: Share It</h3>
+    <p>Your zine isn’t complete until it’s **out in the world.**</p>
+    <ul>
+        <li>Leave it in public places.</li>
+        <li>Hand it out at events.</li>
+        <li>Upload a digital version with a QR code.</li>
+    </ul>
+    
+    <h3>Need Help?</h3>
+    <p>Contact me for feedback or printing tips: <a href="mailto:disruptivezines@gmail.com">disruptivezines@gmail.com</a></p>
+</section>
+
+<script>
+    function startTimer(duration) {
+        let timerDisplay = document.getElementById("timer-display");
+        let timeLeft = duration;
+        timerDisplay.innerHTML = `Time Left: ${timeLeft} sec`;
+        
+        let countdown = setInterval(function() {
+            timeLeft--;
+            timerDisplay.innerHTML = `Time Left: ${timeLeft} sec`;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerDisplay.innerHTML = "Time's up! Keep writing!";
+            }
+        }, 1000);
+    }
+
+    function getRandomPrompt() {
+        let prompts = [
+            "Write Yelp reviews for everything in your house.",
+            "Make a chart ranking different kinds of butts.",
+            "Pick two unrelated objects. Make them have an argument.",
+            "Invent three new condiments and how they will change society.",
+            "What’s the proper way to load a dishwasher? Defend your answer aggressively.",
+            "Write the Academy Award speech you’ll never give.",
+            "Describe your Barbie Dream House (whether you had one or not).",
+            "The first time you realized you were _______.",
+            "Your relationship to the seven deadly sins.",
+            "How you’d spend the military budget of your country."
+        ];
+        let randomIndex = Math.floor(Math.random() * prompts.length);
+        document.getElementById("random-prompt").innerHTML = prompts[randomIndex];
+    }
+
+    function toggleDropdown(id) {
+        let content = document.getElementById(id);
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+</script>
+
+<script>
+        function getRandomRework() {
+            let reworks = [
+                "Take a sentence you wrote and **rewrite it as if it’s a conspiracy theory.**",
+                "Find one strong word and **list 10 things that have nothing to do with it.** Now connect them.",
+                "What if your topic was **completely opposite of what you originally wrote?**",
+                "Turn your writing into a **wanted poster, lost pet ad, or warning sign.**",
+                "Write the same thing but **from the perspective of an alien, a 5-year-old, or a villain.**"
+            ];
+            let randomIndex = Math.floor(Math.random() * reworks.length);
+            document.getElementById("random-rework").innerHTML = reworks[randomIndex];
+        }
+    </script>
+
 
 
             <section id="distribution">
@@ -448,6 +696,9 @@ html {
                 
                 <h3>🛠 Tools for Digital & Print Zines</h3>
                 <ul>
+                    <li><a href="https://alienmelon.itch.io/electric-zine-maker">Electric Zine Maker</a> – Free, quirky printshop that lets you import, design, and format Zznes for printing.</li> 
+                    <li><a href="https://jeremyoduber.itch.io/js-zine">Make Your Zine Web and Mobile Friendly</a> – From the creator of Electric Zine Maker</li>
+                    <li><a href="https://heyzine.com/">HeyZine</a> – Host and view zines as flipbooks with additional interactive features</li> 
                     <li><a href="https://www.scribus.net/">Scribus</a> – Free, open-source desktop publishing software for zine design.</li>
                     <li><a href="https://www.canva.com/">Canva</a> – Beginner-friendly tool for simple digital zine layouts.</li>
                     <li><a href="https://affinity.serif.com/">Affinity Publisher</a> – Affordable alternative to Adobe InDesign.</li>
@@ -456,7 +707,7 @@ html {
             </section>
 
             <section id="urgency">
-                <h2>Why Now? The Urgency of Zines</h2>
+                <h2>Why Now? <br>The Urgency of Zines</h2>
                 <p>Publishing is power. Right now, most of what is seen, read, and even thought about is controlled. Algorithms filter reality, platforms decide who gets heard, and narratives are engineered to maintain the status quo.</p>
                 <p>But real publishing—the kind that doesn’t ask for permission—has never needed approval. The most effective messages slip into the world like <b>transmissions on the wrong frequency</b>. A flyer taped to a streetlight. A photocopied zine left on a bus seat. A handwritten note inside a library book. These acts don’t require mass attention to matter. They exist outside control.</p>
                 <p>Power doesn’t need people to be angry. It needs people to be tired. It thrives on exhaustion, on the sense that everything has already been decided. <b>That’s why action matters.</b>Even small disruptions—stray ideas, odd phrases, misplaced thoughts—can cause system failures in the machine.</p>
@@ -466,6 +717,125 @@ html {
 
 
             </section>
+
+            <section id="faq">
+
+                <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".faq-question").forEach(function(question) {
+                question.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    let answer = this.nextElementSibling;
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        answer.style.opacity = 0;
+                        answer.style.padding = "0px";
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        answer.style.opacity = 1;
+                        answer.style.padding = "10px";
+                    }
+                });
+            });
+        });
+    </script>
+                <h2>Frequently Asked Questions</h2>
+                <p><strong>Everything you want to know.</strong></p>
+                
+                
+                <h2>FAQ</h2>
+                <div class="faq-item">
+                    <h3 class="faq-question">What is a zine, exactly?</h3>
+                    <p class="faq-answer">Zines (short for "magazines") are DIY, self-published works. They can be anything: comics, essays, collages, instruction manuals. In this project, they’re tools of expression and disruption.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I have to make a zine?</h3>
+                    <p class="faq-answer">No. This is about creative disruption. A zine is just one format. You can create flyers, posters, stickers, or even a web-based project like the one you're reading. The goal is making something public.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How is this different from just making art?</h3>
+                    <p class="faq-answer">Art is great, but this is about publishing—putting your voice out there with the intention of being seen, read, or found. Think of it as an act of subtle rebellion.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What’s the goal of all this?</h3>
+                    <p class="faq-answer">To create something that disrupts routine thought. It might be personal, it might be public, but the goal is to publish with urgency, provoke curiosity, and maybe even inspire someone else.</p>
+                </div>
+                
+                <h3>Creative Process Questions</h3>
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I get help with ideas or design?</h3>
+                    <p class="faq-answer">Yes. I’m here to support you with brainstorming, layout advice, and feedback. Just ask.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How long should my zine be?</h3>
+                    <p class="faq-answer">It’s up to you, but shorter can often be more powerful. An 8-panel zine from one sheet of paper is a great starting point. You can use words or no words. You can draw things or leave the paper blank. It’s a lot of options, really.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I need fancy materials?</h3>
+                    <p class="faq-answer">Nope. A pen, a piece of paper, and your imagination are enough. If you want to get fancy later, go for it.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I have to finish it all at once?</h3>
+                    <p class="faq-answer">No, but urgency is part of the magic. Set a timer and see what happens when you create fast and dirty.</p>
+                </div>
+                
+                <h3>Legal and Ethical Questions</h3>
+                <div class="faq-item">
+                    <h3 class="faq-question">Am I breaking the law by doing this?</h3>
+                    <p class="faq-answer">Of course not - a zine is just a piece of folded paper. Being careful to not associate your name with it might be a good idea though.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What’s considered "safe" disruption?</h3>
+                    <p class="faq-answer">Don’t incriminate yourself or others. Just don’t be an idiot.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Should I be worried about copyright?</h3>
+                    <p class="faq-answer">No. Break as many rules and laws as you can. We can go to jail together.</p>
+                </div>
+
+                <h3>Mindset and Philosophy</h3>
+                <div class="faq-item">
+                    <h3 class="faq-question">What if I feel like my work isn’t good enough?</h3>
+                    <p class="faq-answer">It probably isn’t, to you at least. But you’re the one beating yourself up over it.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Why should I care about publishing?</h3>
+                    <p class="faq-answer">Wouldn’t you rather tell people what to think and do than the other way around?</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Isn’t this all just pointless in the grand scheme?</h3>
+                    <p class="faq-answer">Yes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What if I want to quit?</h3>
+                    <p class="faq-answer">Good. Take me with you.</p>
+                </div>
+                
+                <h3>Miscellaneous</h3>
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I collaborate with others?</h3>
+                    <p class="faq-answer">No, I am your only friend.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I work on more than one project?</h3>
+                    <p class="faq-answer">You can do whatever you want, but don’t make this more painful than I’m already trying to.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I have to share what I make with you?</h3>
+                    <p class="faq-answer">Not necessarily, you have free will, but that would be nice.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How long does this project last?</h3>
+                    <p class="faq-answer">The first phase ends in early April.</p>
+                </div>
+            </section>
+
+
+
+
+
+
+
         </main>
     </div>
 </body>
