@@ -706,6 +706,9 @@ button:hover {
     <p>Contact me for feedback or printing tips: <a href="mailto:disruptivezines@gmail.com">disruptivezines@gmail.com</a></p>
 </section>
 
+
+
+
 <script>
     let countdown; // global reference
   
@@ -715,7 +718,6 @@ button:hover {
       const timerDisplay = document.getElementById("timer-display");
       let timeLeft = duration;
   
-      // Style the display area
       if (timerDisplay) {
         timerDisplay.style.fontSize = "3em";
         timerDisplay.style.color = "#ff007f";
@@ -734,9 +736,7 @@ button:hover {
       }
     }
   
-    function getRandomPrompt() {
-      const prompts = [
-       "Write Yelp reviews for everything in your house.",
+    const allPrompts = [ "Write Yelp reviews for everything in your house.",
   "Make a chart ranking different kinds of butts.",
   "Two random objects. Make them argue.",
   "Invent 3 new condiments that change society.",
@@ -781,18 +781,24 @@ button:hover {
   "Review anything: a novel, a pizza chain, your phone.",
   "Write micro fiction. Keep it tiny and strange.",
   "Zine of your poems. No explanation needed.",
-  "Fanzine: obsess over anything. Make us believe."
-      ];
+  "Fanzine: obsess over anything. Make us believe."];
+    let remainingPrompts = [...allPrompts];
+  
+    function getRandomPrompt() {
       const promptElement = document.getElementById("random-prompt");
-      if (promptElement) {
-        const index = Math.floor(Math.random() * prompts.length);
-        promptElement.innerHTML = prompts[index];
+      if (!promptElement) return;
+  
+      if (remainingPrompts.length === 0) {
+        promptElement.innerHTML = "✨ You’ve seen all the prompts. Time to make your own.";
+        return;
       }
+  
+      const index = Math.floor(Math.random() * remainingPrompts.length);
+      const prompt = remainingPrompts.splice(index, 1)[0];
+      promptElement.innerHTML = prompt;
     }
   
-    function getRandomRework() {
-      const reworks = [
-      "Take three random words from your brainstorm and write a prophecy.",
+    const allReworks = ["Take three random words from your brainstorm and write a prophecy.",
   "Rewrite your piece as a <strong>rejected children's book idea.</strong>",
   "Take your concept and make it <strong>completely wordless.</strong> What does it look like?",
   "Turn your zine idea into a <strong>national holiday.</strong> What are the traditions?",
@@ -825,13 +831,21 @@ button:hover {
   "Imagine your zine was <strong>tattooed on a stranger’s back.</strong> What’s the story?",
   "Use your topic to <strong>create a new unit of measurement.</strong> Define it poorly.",
   "Write your zine from the POV of <strong>a cursed object in a thrift store.</strong>",
-  "Summarize your zine as <strong>one sentence overheard at a bus stop.</strong>"
-      ];
+  "Summarize your zine as <strong>one sentence overheard at a bus stop.</strong>"];
+    let remainingReworks = [...allReworks];
+  
+    function getRandomRework() {
       const reworkElement = document.getElementById("random-rework");
-      if (reworkElement) {
-        const index = Math.floor(Math.random() * reworks.length);
-        reworkElement.innerHTML = reworks[index];
+      if (!reworkElement) return;
+  
+      if (remainingReworks.length === 0) {
+        reworkElement.innerHTML = "💡 You’ve reworked it every way. Time to break your own format.";
+        return;
       }
+  
+      const index = Math.floor(Math.random() * remainingReworks.length);
+      const rework = remainingReworks.splice(index, 1)[0];
+      reworkElement.innerHTML = rework;
     }
   
     function toggleDropdown(id) {
@@ -841,7 +855,12 @@ button:hover {
       }
     }
   </script>
-  
+
+
+
+
+
+
 
             <section id="distribution">
                 <h2>Distribution & Impact</h2>
