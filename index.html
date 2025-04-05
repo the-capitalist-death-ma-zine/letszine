@@ -19,6 +19,7 @@
         }
         .faq-question {
             padding: 6px; /* Smaller padding */
+            line-height: 1.4;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
@@ -252,6 +253,18 @@ body {
     margin: 20px 0 10px;
 }
 
+.content h5 {
+    font-size: 3.5em;
+    color: #000000;
+    font-family: 'Bayon', sans-serif;
+    text-transform: uppercase;
+    font-weight: medium;
+    border-bottom: 2px dashed #ff007f;
+    padding-bottom: 5px;
+    margin: 30px 0 15px;
+    line-height: 1.2;
+}
+
 /* -------------------------
    Lists
 -------------------------- */
@@ -478,6 +491,13 @@ button:hover {
                 <!-- Suggested image: A variety of zine types displayed side by side, showing format diversity. -->
 
 
+               
+               
+               
+               
+               
+               
+               
                 <section id="making">
                     <h2>Making a Zine</h2>
                     <p><strong>Making a zine is more than just folding paper—it’s an entire process from idea to distribution.</strong></p>
@@ -493,8 +513,8 @@ button:hover {
                         <li><strong>Whitespace is Power:</strong> A crowded page can overwhelm. <strong>Leave breathing room.</strong></li>
                         <li><strong>Grids & Chaos:</strong> Some zines follow a clean grid structure, others embrace collage-style unpredictability. Choose what fits.</li>
                       </ul>
-                      <div class="image-note">
-                        <em>📸 Suggested image:</em>
+                      <div class="image-note" style="text-align: center;">
+                        <em>📸 Layout Heirarchy:</em>
                         <img src="https://www.zekagraphic.com/wp-content/uploads/2021/03/Typographic-Hierarchy-Levels-in-Graphic-Design.jpg" alt="Example of typographic hierarchy showing different levels of text importance in layout." width="600">
                         <p>Source: <a href="https://www.zekagraphic.com/typographic-hierarchy-in-graphic-design/" target="_blank">Zekagraphic</a></p>
                       </div>
@@ -506,7 +526,7 @@ button:hover {
                         <li><strong>Mixing Fonts:</strong> Using more than 2–3 fonts usually looks chaotic—perfect if that's the look you're after.</li>
                         <li><strong>Legibility First:</strong> Text should serve the message. If the words are unreadable, the impact is lost.</li>
                       </ul>
-                      <div class="image-note">
+                      <div class="image-note" style="text-align: center;">
                         <img src="https://www.zekagraphic.com/wp-content/uploads/2023/03/Font-Families-Typography-Guide-Infographic.jpg" alt="Infographic showing different font families and styles." width="500">
                         <img src="https://www.zekagraphic.com/wp-content/uploads/2023/03/How-To-Pair-Fonts-Infographic-Typography-Guide.jpg" alt="Infographic on how to pair fonts effectively." width="500">
                         <img src="https://www.zekagraphic.com/wp-content/uploads/2023/03/4-Common-Typography-Mistakes-Typography-Guide.jpg" alt="Infographic on common typography mistakes to avoid." width="500">
@@ -548,8 +568,8 @@ button:hover {
                         <img src="https://www.42ndstreet.org.uk/media/etdlxppk/zine-guide-colour.jpg" alt="Example layout of a zine guide with colorful illustrations." width="800">
                       </div>
                   
-                      <div class="image-note">
-                        <em>📸 Suggested image:</em>
+                      <div class="image-note" style="text-align: center;">
+                        <em>📸 Examples of Zine Folds:</em>
                         <img src="https://i.pinimg.com/736x/ff/e7/16/ffe716933dbd465814e63b55ff26dd11.jpg" alt="Overview of several types of zine binding including saddle stitch, perfect bound, and more." width="600">
                         <p>Source: <a href="https://www.pinterest.com/pin/ffe716933dbd465814e63b55ff26dd11/" target="_blank">Pinterest</a></p>
                       </div>
@@ -561,7 +581,7 @@ button:hover {
                         <li><strong>Thread Binding:</strong> For a DIY, book-like aesthetic.</li>
                         <li><strong>Glue & Tape:</strong> Useful for unconventional zines.</li>
                       </ul>
-                      <div class="image-note">
+                      <div class="image-note" style="text-align: center;">
                         <img src="https://i.pinimg.com/736x/bc/97/63/bc9763be174f80406c102d6965d09dae.jpg" alt="Close-up of a handmade zine with thread binding." width="600">
                         <p>Source: <a href="https://www.pinterest.com/pin/bc9763be174f80406c102d6965d09dae/" target="_blank">Pinterest</a></p>
                       </div>
@@ -616,8 +636,11 @@ button:hover {
     
     <h3>Step 1: Write Without Thinking</h3>
     <p>Pick a prompt, set the timer, and write for 5 minutes. <strong>Don't edit, don't hesitate.</strong> Just let words spill onto the page.</p>
-    <button onclick="startTimer(300)">Start 5-Minute Timer</button>
-    <p id="timer-display"></p>
+    <div style="text-align: center; margin: 20px 0;">
+        <button onclick="startTimer(300)">Start 5-Minute Timer</button>
+        <p id="timer-display"></p>
+      </div>
+      
     
     <div class="prompt-box">
         <h4>Click to Reveal a Random Prompt</h4>
@@ -639,14 +662,16 @@ button:hover {
     <p>Now that you've written something, let's decide what kind of zine you want to make.</p>
     <div class="toggle-container">
         <button class="toggle-btn" onclick="toggleDropdown('format-options')">Choose a Zine Format</button>
-        <div id="format-options" class="toggle-content">
+        <div id="format-options" class="toggle-content" style="text-align: left; margin: 0 auto; width: fit-content;">
             <ul>
-                <li>8-Panel Fold: A single-page zine with a clever fold.</li>
-                <li>Half-Page Booklet: A staple-bound mini-magazine.</li>
-                <li>Accordion Fold: A continuous unfolding zine.</li>
-                <li>One-Page Collage: No structure, just vibes.</li>
+              <li><b>8-Panel Fold:</b> A single-page zine with an easy fold.</li>
+              <li><b>Half-Page Booklet:</b> A staple-bound mini-magazine.</li>
+              <li><b>Accordion Fold:</b> A continuous unfolding zine.</li>
+              <li><b>One-Page Collage:</b> No structure, just vibes.</li>
             </ul>
-        </div>
+          </div>
+          
+
     </div>
     
     <h3>Step 3: Map Your Zine</h3>
@@ -711,16 +736,52 @@ button:hover {
   
     function getRandomPrompt() {
       const prompts = [
-        "Write Yelp reviews for everything in your house.",
-        "Make a chart ranking different kinds of butts.",
-        "Pick two unrelated objects. Make them have an argument.",
-        "Invent three new condiments and how they will change society.",
-        "What’s the proper way to load a dishwasher? Defend your answer aggressively.",
-        "Write the Academy Award speech you’ll never give.",
-        "Describe your Barbie Dream House (whether you had one or not).",
-        "The first time you realized you were _______.",
-        "Your relationship to the seven deadly sins.",
-        "How you’d spend the military budget of your country."
+       "Write Yelp reviews for everything in your house.",
+  "Make a chart ranking different kinds of butts.",
+  "Two random objects. Make them argue.",
+  "Invent 3 new condiments that change society.",
+  "Defend your dishwasher-loading technique like it’s life or death.",
+  "Write the Oscar speech you’ll never give.",
+  "Describe your Barbie Dream House (real or imagined).",
+  "The first time you realized you were ______.",
+  "Your relationship to the seven deadly sins.",
+  "Spend your country's military budget however you want.",
+  "Describe your dream store. What’s in the back?",
+  "Invent a secret handshake in painful detail.",
+  "Turn a tiny moment into absurd lore.",
+  "Future archaeological discovery that changes history.",
+  "What if ghosts are time travelers with bad aim?",
+  "List 10 things you’ve never said out loud.",
+  "Give a nearby object a tragic backstory.",
+  "Draw a map of somewhere that doesn’t exist.",
+  "Rewrite a movie ending—make it worse.",
+  "Find a receipt. Turn it into a character.",
+  "Fill a page with fake band names.",
+  "Write a personal ad for an object.",
+  "Turn your last 5 Google searches into a story.",
+  "Make a warning label for something in your house.",
+  "Describe a place that doesn’t exist but should.",
+  "Write about something you’re obsessed with.",
+  "Make a zine about someone or something genius.",
+  "List everything that annoys you. Rant if needed.",
+  "Reprint trash or found papers. Let them speak.",
+  "Use found material—poems, headlines, etc. Remix it.",
+  "Document your thrift store treasure-hunting lore.",
+  "The Punk Bible: chaos, DIY, and defiance.",
+  "Mini-Manifesto: go off about literally anything.",
+  "Bus Zine: stories, thoughts, weirdos, revelations.",
+  "Make a zine from your closet or garage junk.",
+  "Collage public signs and add your own spin.",
+  "Most embarrassing moment. Go.",
+  "List of absurd rules everyone should follow.",
+  "Pet Diary: every 10 minutes. Log it.",
+  "Walk from A to B. Observe. Document. Zine.",
+  "Mass Consumption: remix ads, brands, and tech noise.",
+  "Interview your grandma. Or your neighbor. Or both.",
+  "Review anything: a novel, a pizza chain, your phone.",
+  "Write micro fiction. Keep it tiny and strange.",
+  "Zine of your poems. No explanation needed.",
+  "Fanzine: obsess over anything. Make us believe."
       ];
       const promptElement = document.getElementById("random-prompt");
       if (promptElement) {
@@ -731,11 +792,40 @@ button:hover {
   
     function getRandomRework() {
       const reworks = [
-        "Take a sentence you wrote and <strong>rewrite it as if it’s a conspiracy theory.</strong>",
-        "Find one strong word and <strong>list 10 things that have nothing to do with it.</strong> Now connect them.",
-        "What if your topic was <strong>completely opposite of what you originally wrote?</strong>",
-        "Turn your writing into a <strong>wanted poster, lost pet ad, or warning sign.</strong>",
-        "Write the same thing but <strong>from the perspective of an alien, a 5-year-old, or a villain.</strong>"
+      "Take three random words from your brainstorm and write a prophecy.",
+  "Rewrite your piece as a <strong>rejected children's book idea.</strong>",
+  "Take your concept and make it <strong>completely wordless.</strong> What does it look like?",
+  "Turn your zine idea into a <strong>national holiday.</strong> What are the traditions?",
+  "Make a <strong>museum exhibit</strong> out of your work. What’s in the gift shop?",
+  "Write a <strong>dream journal entry</strong> that features your idea—but distorted.",
+  "Explain your topic <strong>as if you're possessed by the spirit of a Victorian poet.</strong>",
+  "Invent a <strong>fake social media app</strong> based on your zine. What are the rules?",
+  "Translate your zine into a <strong>menu at an unsettling restaurant.</strong>",
+  "Make your idea into a <strong>one-star review from a disappointed customer.</strong>",
+  "Imagine your concept was <strong>found in an alien time capsule</strong> 2,000 years from now. How would they interpret it?",
+  "Turn your zine into a <strong>pop quiz</strong>. Make every question absurd.",
+  "Write an <strong>out-of-office auto-reply</strong based on your idea.",
+  "Break it into <strong>instructions for summoning something.</strong> What’s the ritual?",
+  "Imagine your zine was <strong>banned.</strong> What did the press release say?",
+  "Convert your piece into <strong>a terrible dating profile.</strong>",
+  "Take your idea and make it <strong>haiku-shaped—but emotionally unstable.</strong>",
+  "Redraw your idea <strong>as a cryptic flowchart with no clear logic.</strong>",
+  "Summarize your zine using <strong>only stickers from a gas station bathroom vending machine.</strong>",
+  "Reformat it as <strong>rules for a secret club that meets in the back of a laundromat.</strong>",
+  "Use the same material to <strong>write a letter to your future enemy.</strong>",
+  "Imagine your work was adapted into a <strong>theme park attraction.</strong> What's the ride like?",
+  "Try to <strong>blackout-poetry-ify</strong> your piece using a page from a book or ad.",
+  "Rewrite your zine <strong>as if it was scrawled by a child ghost in crayon.</strong>",
+  "If your idea was <strong>illegal</strong>, what would be the warning label?",
+  "Write a <strong>Wikipedia article</strong> entry about your topic—completely fabricated.",
+  "Make a <strong>BuzzFeed quiz</strong>: Which [Your Zine Topic] Are You?",
+  "Rework your zine as <strong>a motivational poster from an alternate reality.</strong>",
+  "Turn it into <strong>a passive-aggressive group chat meltdown.</strong>",
+  "Make your piece a <strong>scripted phone scam call.</strong> Bonus: try to make it convincing.",
+  "Imagine your zine was <strong>tattooed on a stranger’s back.</strong> What’s the story?",
+  "Use your topic to <strong>create a new unit of measurement.</strong> Define it poorly.",
+  "Write your zine from the POV of <strong>a cursed object in a thrift store.</strong>",
+  "Summarize your zine as <strong>one sentence overheard at a bus stop.</strong>"
       ];
       const reworkElement = document.getElementById("random-rework");
       if (reworkElement) {
@@ -781,7 +871,7 @@ button:hover {
                 <ul>
                     <li><strong>Think about audience:</strong> Who will pick up the zine? Where do they spend time?</li>
                     <li><strong>Make it accessible:</strong> Ensure copies are <b>physically reachable</b>and easy to take.</li>
-                    <li><strong>Track the spread:</strong> Use <b>QR codes, unique phrases, or email drops</b>to see where zines travel.</li>
+                    <li><strong>Track the spread:</strong> Use <b>QR codes, unique phrases, or email drops</b> to see where zines travel.</li>
                 </ul>
                 <!-- Suggested image: A zine with a QR code for tracking engagement. -->
             </section>
@@ -792,9 +882,9 @@ button:hover {
                 
                 <h3>📖 Essential Guides & Tutorials</h3>
                 <ul>
-                    <li><a href="https://zinewiki.com/">ZineWiki</a> – A massive archive of zine culture and history.</li>
-                    <li><a href="https://thecreativeindependent.com/guides/how-to-make-a-zine/">How to Make a Zine</a> – A detailed, creative guide from The Creative Independent.</li>
-                    <li><a href="https://diyzines.com/">DIY Zine Resources</a> – Practical advice on folding, printing, and distribution.</li>
+                    <li><a href="https://zinewiki.com/"><b>ZineWiki</b></a> – A massive archive of zine culture and history.</li>
+                    <li><a href="https://thecreativeindependent.com/guides/how-to-make-a-zine/"><b>How to Make a Zine</b></a> – A detailed, creative guide from The Creative Independent.</li>
+                    <li><a href="https://diyzines.com/"><b>DIY Zine Resources</b></a> – Practical advice on folding, printing, and distribution.</li>
                 </ul>
                 <!-- Suggested image: Screenshot of an online zine archive. -->
                 
@@ -809,7 +899,7 @@ button:hover {
                 <h3>🛠 Tools for Digital & Print Zines</h3>
                 <ul>
                     <li><a href="https://alienmelon.itch.io/electric-zine-maker"><strong>Electric Zine Maker</strong></a> – Free, quirky printshop that lets you import, design, and format Zznes for printing.</li> 
-                    <li><a href="https://jeremyoduber.itch.io/js-zine"><strong>Make Your Zine Web and Mobile Friendly<strong></a> – From the creator of Electric Zine Maker</li>
+                    <li><a href="https://jeremyoduber.itch.io/js-zine"><strong>Make Your Zine Web and Mobile Friendly</strong></a> – From the creator of Electric Zine Maker</li>
                     <li><a href="https://heyzine.com/"><strong>HeyZine</strong></a> – Host and view zines as flipbooks with additional interactive features</li> 
                     <li><a href="https://www.scribus.net/"><strong>Scribus</strong></a> – Free, open-source desktop publishing software for zine design.</li>
                     <li><a href="https://www.canva.com/"><strong>Canva</strong></a> – Beginner-friendly tool for simple digital zine layouts.</li>
@@ -873,7 +963,7 @@ button:hover {
                     <p class="faq-answer">To create something that disrupts routine thought. It might be personal, it might be public, but the goal is to publish with urgency, provoke curiosity, and maybe even inspire someone else.</p>
                 </div>
                 
-                <h3>Creative Process Questions</h3>
+                <h5>Creative Process Questions</h5>
                 <div class="faq-item">
                     <h3 class="faq-question">Can I get help with ideas or design?</h3>
                     <p class="faq-answer">Yes. Check out the walkthrough section on this site, and ask for help. I’m here to support you with brainstorming, layout advice, and feedback. Just ask.</p>
@@ -891,7 +981,7 @@ button:hover {
                     <p class="faq-answer">No, but urgency is part of the magic. Set a timer and see what happens when you create fast and dirty.</p>
                 </div>
                 
-                <h3>Legal and Ethical Questions</h3>
+                <h5>Legal and Ethical Questions</h5>
                 <div class="faq-item">
                     <h3 class="faq-question">Am I breaking the law by doing this?</h3>
                     <p class="faq-answer">Of course not - a zine is just a piece of folded paper. Being careful to not associate your name with it might be a good idea though.</p>
@@ -905,7 +995,7 @@ button:hover {
                     <p class="faq-answer">No. Break as many rules and laws as you can. We can go to jail together.<br>Just kidding. Use of copyrighted materials most likely falls under Fair Use. Try to follow the rules until you can't, at which point... well, you didn't hear it from me.</p>
                 </div>
 
-                <h3>Mindset and Philosophy</h3>
+                <h5>Mindset and Philosophy</h5>
                 <div class="faq-item">
                     <h3 class="faq-question">What if I feel like my work isn’t good enough?</h3>
                     <p class="faq-answer">Consider what 'good enough' means to you. What if it's about the process? Isn't it more important to do something than nothing at all?</p>
@@ -923,7 +1013,7 @@ button:hover {
                     <p class="faq-answer">I'm just a web-zine here to inspire you. If you feel like you need to quit, you do you - I'll still be here when you're ready to come back.</p>
                 </div>
                 
-                <h3>Miscellaneous</h3>
+                <h5>Miscellaneous</h5>
                 <div class="faq-item">
                     <h3 class="faq-question">Can I collaborate with others?</h3>
                     <p class="faq-answer">Of course. Sharing ideas can be a great way to spark new ones. Ask for help often - if you don't know how to do something, someone out there does.</p>
