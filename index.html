@@ -188,52 +188,81 @@ body {
     animation: glitch 0.3s infinite alternate;
 }
 
-/* Main Content Adjustments */
+
+
+
+
+
+
+
+/* -------------------------
+   Main Content Layout
+-------------------------- */
 .content {
     flex: 1;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.9);
-    text-transform: none;
-    font-size: 1.4em;
-    font-weight: 500;
     margin-left: 260px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1.4em;
+    font-weight: 400; /* Base weight — not too heavy */
+    text-transform: none;
 }
+
+/* -------------------------
+   Paragraphs
+-------------------------- */
+.content p {
+    font-size: 1.3em;
+    font-weight: 400; /* Reset so <strong> works visually */
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+/* -------------------------
+   Headings
+-------------------------- */
 
 .content h2 {
     font-size: 4.8em;
     color: #ff007f;
-    border-bottom: 3px solid #ff007f;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
     font-family: 'Bayon', sans-serif;
     text-transform: uppercase;
     line-height: 1.1;
+    border-bottom: 3px solid #ff007f;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .content h3 {
     font-size: 2.8em;
     color: #ff007f;
-    margin-top: 30px;
+    font-family: 'Bayon', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
-    font-family: 'Bayon', sans-serif;
-    margin-bottom: 10px; /* Add this */
+    border-bottom: 2px dashed #ff007f;
+    padding-bottom: 5px;
+    margin: 30px 0 15px;
 }
 
+.content h4 {
+    font-size: 2em;
+    font-family: "Sono", monospace;
+    color: #111;
+    font-weight: bold;
+    margin: 20px 0 10px;
 }
 
-.content p {
-    font-size: 1.3em;
-    font-weight: normal;
+/* -------------------------
+   Lists
+-------------------------- */
+.content ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
-/* Selection Highlight in Cyan */
-::selection {
-    background: cyan;
-    color: #000;
-}
-
-/* Style for All Links to Open Externally */
+/* -------------------------
+   Global Link Styles
+-------------------------- */
 a {
     color: #ff007f;
     text-decoration: none;
@@ -246,23 +275,39 @@ a:hover {
     animation: glitch 0.3s infinite alternate;
 }
 
-/* Smooth Scrolling Fix */
+/* -------------------------
+   Highlight & Animation
+-------------------------- */
+::selection {
+    background: cyan;
+    color: #000;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Parallax Scrolling for Intro Message */
-.intro-message {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Animations */
 @keyframes flicker {
-    0% { opacity: 1; }
+    0%   { opacity: 1; }
     100% { opacity: 0.85; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -433,79 +478,100 @@ button:hover {
                 <!-- Suggested image: A variety of zine types displayed side by side, showing format diversity. -->
 
 
-            <section id="making">
-                <h2>Making a Zine</h2>
-                <p><strong>Making a zine is more than just folding paper—it’s an entire process from idea to distribution.</strong></p>
-                
-                <section id="design-layout">
-                    <h3>Design & Layout</h3>
-                    <p>Design is what makes a zine readable, engaging, and <b>impossible to ignore</b>. A zine’s structure should serve its message—whether clean and minimal or chaotic and overloaded.</p>
-                    
-                    <h4>📏 Layout Principles</h4>
-                    <p>Understanding the basics of <b>balance, contrast, and readability</b>can make the difference between a zine that people flip through and one that pulls them in.</p>
-                    <ul>
-                        <li><strong>Hierarchy Matters:</strong> The most important text should be <b>the loudest</b>. Play with size, boldness, and placement.</li>
-                        <li><strong>Whitespace is Power:</strong> A crowded page can overwhelm. <b>Leave breathing room.<b></li>
-                        <li><strong>Grids & Chaos:</strong> Some zines follow a <b>clean grid structure</b>, others embrace <b>collage-style unpredictability</b>. Choose what fits.</li>
-                    </ul>
-                    <!-- Suggested image: Side-by-side comparison of a structured vs. chaotic zine layout. -->
-                    
-                    <h4>🖋 Typography & Readability</h4>
-                    <p>Typography sets the mood. A horror-themed zine might use <b>distorted, typewriter fonts</b>, while a political manifesto benefits from <b>bold, clean type.<b></p>
-                    <ul>
-                        <li><strong>Handwritten vs. Digital:</strong> A <b>handwritten zine</b>can feel raw and personal, but a <b>digitally typeset</b>one ensures clarity.</li>
-                        <li><strong>Mixing Fonts:</strong> Using more than 2-3 fonts <b>can look chaotic</b>—but sometimes, that’s exactly what’s needed.</li>
-                        <li><strong>Legibility First:</strong> Text should <b>serve the message</b>. If the words are unreadable, the impact is lost.</li>
-                    </ul>
-                    <!-- Suggested image: Example of different font choices and their effect on tone. -->
-                    
-                    <h4>✂️ DIY Layout Techniques</h4>
-                    <p>Not everything needs to be computer-generated. Many zines use <b>cut-and-paste, hand-drawn, or layered textures</b>to create a raw, tactile feel.</p>
-                    <ul>
-                        <li><strong>Collage & Layering:</strong> Combining <b>text, images, and textures</b>by physically cutting and pasting.</li>
-                        <li><strong>Scanner Hacks:</strong> Distorting images using scanners to create <b>surreal visuals</b>.</li>
-                        <li><strong>Photocopier Effects:</strong> Repeated photocopying <b>degrades images beautifully</b>over time.</li>
-                    </ul>
-                    <!-- Suggested image: Example of a cut-and-paste zine layout with textures. -->
-                    
-                    <h4>🛠 Tools & Resources</h4>
-                    <p>Whether working by hand or digitally, there are <b>plenty of free and accessible tools</b>for layout:</p>
-                    <ul>
+                <section id="making">
+                    <h2>Making a Zine</h2>
+                    <p><strong>Making a zine is more than just folding paper—it’s an entire process from idea to distribution.</strong></p>
+                  
+                    <section id="design-layout">
+                      <h3>Design & Layout</h3>
+                      <p>Design is what makes a zine readable, irresistible, and <strong>impossible to ignore</strong>. Whether you go clean and minimal or chaotic and overloaded, the layout should serve the message.</p>
+                  
+                      <h4>📏 Layout Principles</h4>
+                      <p>Understanding the basics of <strong>balance, contrast, and readability</strong> can make the difference between a zine that people flip through and one that pulls them in.</p>
+                      <ul>
+                        <li><strong>Hierarchy Matters:</strong> The most important text should be <strong>the loudest</strong>. Play with size, boldness, and placement.</li>
+                        <li><strong>Whitespace is Power:</strong> A crowded page can overwhelm. <strong>Leave breathing room.</strong></li>
+                        <li><strong>Grids & Chaos:</strong> Some zines follow a clean grid structure, others embrace collage-style unpredictability. Choose what fits.</li>
+                      </ul>
+                      <div class="image-note">
+                        <em>📸 Suggested image:</em>
+                        <img src="https://www.zekagraphic.com/wp-content/uploads/2021/03/Typographic-Hierarchy-Levels-in-Graphic-Design.jpg" alt="Example of typographic hierarchy showing different levels of text importance in layout." width="600">
+                        <p>Source: <a href="https://www.zekagraphic.com/typographic-hierarchy-in-graphic-design/" target="_blank">Zekagraphic</a></p>
+                      </div>
+                  
+                      <h4>🖋 Typography & Readability</h4>
+                      <p>Typography sets the mood. A horror-themed zine might use distorted, typewriter fonts, while a political manifesto benefits from bold, clean type.</p>
+                      <ul>
+                        <li><strong>Handwritten vs. Digital:</strong> A handwritten zine can feel raw and personal, but a digitally typeset one ensures clarity.</li>
+                        <li><strong>Mixing Fonts:</strong> Using more than 2–3 fonts usually looks chaotic—perfect if that's the look you're after.</li>
+                        <li><strong>Legibility First:</strong> Text should serve the message. If the words are unreadable, the impact is lost.</li>
+                      </ul>
+                      <div class="image-note">
+                        <img src="https://www.zekagraphic.com/wp-content/uploads/2023/03/Font-Families-Typography-Guide-Infographic.jpg" alt="Infographic showing different font families and styles." width="500">
+                        <img src="https://www.zekagraphic.com/wp-content/uploads/2023/03/How-To-Pair-Fonts-Infographic-Typography-Guide.jpg" alt="Infographic on how to pair fonts effectively." width="500">
+                        <img src="https://www.zekagraphic.com/wp-content/uploads/2023/03/4-Common-Typography-Mistakes-Typography-Guide.jpg" alt="Infographic on common typography mistakes to avoid." width="500">
+                        <p>Source: <a href="https://www.zekagraphic.com/typography-design-beginner-guide/" target="_blank">Zekagraphic Typography Guide</a></p>
+                      </div>
+                  
+                      <h4>✂️ DIY Layout Techniques</h4>
+                      <p>Not everything needs to be computer-generated. Many zines use cut-and-paste, hand-drawn, or layered textures to create a raw, tactile feel.</p>
+                      <ul>
+                        <li><strong>Collage & Layering:</strong> Combining text, images, and textures by physically cutting and pasting.</li>
+                        <li><strong>Scanner Hacks:</strong> Distorting images using scanners to create surreal visuals.</li>
+                        <li><strong>Photocopier Effects:</strong> Repeated photocopying degrades images beautifully over time.</li>
+                      </ul>
+                  
+                      <h4>🛠 Tools & Resources</h4>
+                      <p>Whether working by hand or digitally, there are plenty of free and accessible tools for layout:</p>
+                      <ul>
                         <li><strong>Handmade:</strong> Scissors, glue, tape, old magazines.</li>
-                        <li><strong>Digital:</strong> Free tools like <b>Canva, Scribus, and Inkscape</b>.</li>
+                        <li><strong>Digital:</strong> Free tools like Canva, Scribus, and Inkscape.</li>
                         <li><strong>Hybrid Approach:</strong> Designing by hand, then scanning and editing digitally.</li>
-                    </ul>
-                    <!-- Suggested link: External guide on Scribus & InDesign for zine-making. -->
-                </section>
-                
-                <section id="folding-binding">
-                    <h3>Folding & Binding</h3>
-                    <p>A zine's structure affects how it’s read. Choosing the right format ensures that the content <b>flows properly and has maximum impact.<b></p>
-                    
-                    <h4>📄 Common Folding Techniques</h4>
-                    <ul>
+                        <li><strong>Bonus:</strong> <a href="https://www.youtube.com/watch?v=-xp3DVhld6o" target="_blank">Watch this InDesign tutorial for zine layout</a>.</li>
+                      </ul>
+                    </section>
+                  
+                    <section id="folding-binding">
+                      <h3>Folding & Binding</h3>
+                      <p>A zine's structure affects how it’s read. Choosing the right format ensures that the content flows properly and has maximum impact.</p>
+                  
+                      <h4>📄 Common Folding Techniques</h4>
+                      <ul>
                         <li><strong>Single-Sheet 8-Panel Zine:</strong> One sheet of paper folded into a booklet.</li>
                         <li><strong>Half-Fold (Folio):</strong> A simple folded sheet, stapled in the center.</li>
                         <li><strong>Quarter-Fold (Quarto):</strong> Folds twice for a compact feel.</li>
                         <li><strong>Accordion Fold:</strong> A continuous, unfolding zine.</li>
                         <li><strong>Mixed Media Binding:</strong> Stitched, sewn, or glued.</li>
-                    </ul>
-
-                    <div style="text-align: center;">
-    <img src="https://www.42ndstreet.org.uk/media/etdlxppk/zine-guide-colour.jpg" alt="Zine Guide Cover" width="800">
-</div>
-
-                    <!-- Suggested image: Step-by-step folding guide for an 8-panel zine. -->
-                    
-                    <h4>📎 Binding Methods</h4>
-                    <ul>
+                      </ul>
+                  
+                      <div style="text-align: center;">
+                        <img src="https://www.42ndstreet.org.uk/media/etdlxppk/zine-guide-colour.jpg" alt="Example layout of a zine guide with colorful illustrations." width="800">
+                      </div>
+                  
+                      <div class="image-note">
+                        <em>📸 Suggested image:</em>
+                        <img src="https://i.pinimg.com/736x/ff/e7/16/ffe716933dbd465814e63b55ff26dd11.jpg" alt="Overview of several types of zine binding including saddle stitch, perfect bound, and more." width="600">
+                        <p>Source: <a href="https://www.pinterest.com/pin/ffe716933dbd465814e63b55ff26dd11/" target="_blank">Pinterest</a></p>
+                      </div>
+                  
+                      <h4>📎 Binding Methods</h4>
+                      <ul>
                         <li><strong>Stapling:</strong> The easiest method for multi-page zines.</li>
                         <li><strong>Saddle-Stitching:</strong> A more secure fold-and-staple approach.</li>
                         <li><strong>Thread Binding:</strong> For a DIY, book-like aesthetic.</li>
                         <li><strong>Glue & Tape:</strong> Useful for unconventional zines.</li>
-                    </ul>
-                    <!-- Suggested image: Example of different binding methods with close-up visuals. -->
-                </section>
+                      </ul>
+                      <div class="image-note">
+                        <img src="https://i.pinimg.com/736x/bc/97/63/bc9763be174f80406c102d6965d09dae.jpg" alt="Close-up of a handmade zine with thread binding." width="600">
+                        <p>Source: <a href="https://www.pinterest.com/pin/bc9763be174f80406c102d6965d09dae/" target="_blank">Pinterest</a></p>
+                      </div>
+                    </section>
+                  </section>
+                  
+
+
+
+
                 
                 <section id="printing-reproduction">
                     <h3>Printing & Reproduction</h3>
@@ -533,9 +599,9 @@ button:hover {
                     <h4>🔗 Useful Printing Resources</h4>
                     <p>For deeper guidance on printing methods, check out:</p>
                     <ul>
-                        <li><a href="https://www.risograph.info/">Risograph Printing Guide</a> – Understanding Riso techniques.</li>
-                        <li><a href="https://www.diyprintshop.com/">DIY Screen Printing</a> – Basics of making silkscreen prints.</li>
-                        <li><a href="https://zinewiki.com/">ZineWiki</a> – A collection of zine-related printing methods.</li>
+                        <li><a href="https://www.risograph.info/"><strong>Risograph Printing Guide</strong></a> – Understanding Riso techniques.</li>
+                        <li><a href="https://www.diyprintshop.com/"><strong>DIY Screen Printing</strong></a> – Basics of making silkscreen prints.</li>
+                        <li><a href="https://zinewiki.com/"><strong>ZineWiki</strong></a> – A collection of zine-related printing methods.</li>
                     </ul>
                     <!-- Suggested image: A step-by-step photo series of a zine being printed and assembled. -->
                 </section>
@@ -549,7 +615,7 @@ button:hover {
     <p><strong>Start making—no hesitation, no overthinking.</strong> This is a step-by-step interactive guide to get you from an idea to a finished zine.</p>
     
     <h3>Step 1: Write Without Thinking</h3>
-    <p>Pick a prompt, **set the timer, and write for 5 minutes.** Don't edit, don't hesitate. Just let words spill onto the page.</p>
+    <p>Pick a prompt, set the timer, and write for 5 minutes. <strong>Don't edit, don't hesitate.</strong> Just let words spill onto the page.</p>
     <button onclick="startTimer(300)">Start 5-Minute Timer</button>
     <p id="timer-display"></p>
     
@@ -584,7 +650,7 @@ button:hover {
     </div>
     
     <h3>Step 3: Map Your Zine</h3>
-    <p>Sketch out an **8-page layout** for your zine. This can be rough! Here's an example:</p>
+    <p>Sketch out an <strong>8-page layout</strong> for your zine. This can be rough! Here's an example:</p>
     <img src="https://thealohastudios.com/wp-content/uploads/2021/05/tas_mini-zine_template-480x371.jpg" alt="Zine Guide Example" style="width: 100%; max-width: 600px; display: block; margin: 20px auto; border: 3px solid #ff007f;">
     <p><strong>Page Breakdown:</strong></p>
     <ul>
@@ -604,7 +670,7 @@ button:hover {
     </ul>
     
     <h3>Step 5: Share It</h3>
-    <p>Your zine isn’t complete until it’s **out in the world.**</p>
+    <p>Your zine isn’t complete until it’s <strong>out in the world.</strong></p>
     <ul>
         <li>Leave it in public places.</li>
         <li>Hand it out at events.</li>
@@ -616,63 +682,80 @@ button:hover {
 </section>
 
 <script>
+    let countdown; // global reference
+  
     function startTimer(duration) {
-        let timerDisplay = document.getElementById("timer-display");
-        let timeLeft = duration;
+      clearInterval(countdown); // reset any existing timer
+  
+      const timerDisplay = document.getElementById("timer-display");
+      let timeLeft = duration;
+  
+      // Style the display area
+      if (timerDisplay) {
+        timerDisplay.style.fontSize = "3em";
+        timerDisplay.style.color = "#ff007f";
+        timerDisplay.style.fontWeight = "bold";
+        timerDisplay.style.marginTop = "10px";
         timerDisplay.innerHTML = `Time Left: ${timeLeft} sec`;
-        
-        let countdown = setInterval(function() {
-            timeLeft--;
-            timerDisplay.innerHTML = `Time Left: ${timeLeft} sec`;
-            if (timeLeft <= 0) {
-                clearInterval(countdown);
-                timerDisplay.innerHTML = "Time's up! Keep writing!";
-            }
+  
+        countdown = setInterval(() => {
+          timeLeft--;
+          timerDisplay.innerHTML = `Time Left: ${timeLeft} sec`;
+          if (timeLeft <= 0) {
+            clearInterval(countdown);
+            timerDisplay.innerHTML = "⏰ Time's up! Keep writing!";
+          }
         }, 1000);
+      }
     }
-
+  
     function getRandomPrompt() {
-        let prompts = [
-            "Write Yelp reviews for everything in your house.",
-            "Make a chart ranking different kinds of butts.",
-            "Pick two unrelated objects. Make them have an argument.",
-            "Invent three new condiments and how they will change society.",
-            "What’s the proper way to load a dishwasher? Defend your answer aggressively.",
-            "Write the Academy Award speech you’ll never give.",
-            "Describe your Barbie Dream House (whether you had one or not).",
-            "The first time you realized you were _______.",
-            "Your relationship to the seven deadly sins.",
-            "How you’d spend the military budget of your country."
-        ];
-        let randomIndex = Math.floor(Math.random() * prompts.length);
-        document.getElementById("random-prompt").innerHTML = prompts[randomIndex];
+      const prompts = [
+        "Write Yelp reviews for everything in your house.",
+        "Make a chart ranking different kinds of butts.",
+        "Pick two unrelated objects. Make them have an argument.",
+        "Invent three new condiments and how they will change society.",
+        "What’s the proper way to load a dishwasher? Defend your answer aggressively.",
+        "Write the Academy Award speech you’ll never give.",
+        "Describe your Barbie Dream House (whether you had one or not).",
+        "The first time you realized you were _______.",
+        "Your relationship to the seven deadly sins.",
+        "How you’d spend the military budget of your country."
+      ];
+      const promptElement = document.getElementById("random-prompt");
+      if (promptElement) {
+        const index = Math.floor(Math.random() * prompts.length);
+        promptElement.innerHTML = prompts[index];
+      }
     }
-
+  
+    function getRandomRework() {
+      const reworks = [
+        "Take a sentence you wrote and <strong>rewrite it as if it’s a conspiracy theory.</strong>",
+        "Find one strong word and <strong>list 10 things that have nothing to do with it.</strong> Now connect them.",
+        "What if your topic was <strong>completely opposite of what you originally wrote?</strong>",
+        "Turn your writing into a <strong>wanted poster, lost pet ad, or warning sign.</strong>",
+        "Write the same thing but <strong>from the perspective of an alien, a 5-year-old, or a villain.</strong>"
+      ];
+      const reworkElement = document.getElementById("random-rework");
+      if (reworkElement) {
+        const index = Math.floor(Math.random() * reworks.length);
+        reworkElement.innerHTML = reworks[index];
+      }
+    }
+  
     function toggleDropdown(id) {
-        let content = document.getElementById(id);
+      const content = document.getElementById(id);
+      if (content) {
         content.style.display = content.style.display === "block" ? "none" : "block";
+      }
     }
-</script>
-
-<script>
-        function getRandomRework() {
-            let reworks = [
-                "Take a sentence you wrote and **rewrite it as if it’s a conspiracy theory.**",
-                "Find one strong word and **list 10 things that have nothing to do with it.** Now connect them.",
-                "What if your topic was **completely opposite of what you originally wrote?**",
-                "Turn your writing into a **wanted poster, lost pet ad, or warning sign.**",
-                "Write the same thing but **from the perspective of an alien, a 5-year-old, or a villain.**"
-            ];
-            let randomIndex = Math.floor(Math.random() * reworks.length);
-            document.getElementById("random-rework").innerHTML = reworks[randomIndex];
-        }
-    </script>
-
-
+  </script>
+  
 
             <section id="distribution">
                 <h2>Distribution & Impact</h2>
-                <p><strong>Getting a zine into the world is just as important as making it.</strong> A zine left in the right place can <b>reach someone at exactly the moment they need to see it.</b>The goal isn’t always mass distribution—it’s about <b>strategic placement, visibility, and engagement.<b></p>
+                <p><strong>Getting a zine into the world is just as important as making it.</strong> A zine left in the right place can <b>reach someone at exactly the moment they need to see it.</b>The goal isn’t always mass distribution—it’s about <b>strategic placement, visibility, and engagement.</b>
                 
                 <h3>📍 Where to Distribute</h3>
                 <ul>
@@ -717,20 +800,20 @@ button:hover {
                 
                 <h3>📚 Zine Archives & Libraries</h3>
                 <ul>
-                    <li><a href="https://zines.barnard.edu/">Barnard Zine Library</a> – One of the largest feminist zine collections.</li>
-                    <li><a href="https://www.qzap.org/">Queer Zine Archive Project</a> – A free, accessible digital archive of LGBTQ+ zines.</li>
-                    <li><a href="https://zinelibraries.info/">Zine Libraries Network</a> – Connects physical and digital zine collections worldwide.</li>
+                    <li><a href="https://zines.barnard.edu/"><strong>Barnard Zine Library</strong></a> – One of the largest feminist zine collections.</li>
+                    <li><a href="https://www.qzap.org/"><strong>Queer Zine Archive Project</strong></a> – A free, accessible digital archive of LGBTQ+ zines.</li>
+                    <li><a href="https://zinelibraries.info/"><strong>Zine Libraries Network</strong></a> – Connects physical and digital zine collections worldwide.</li>
                 </ul>
                 <!-- Suggested image: A zine library shelf. -->
                 
                 <h3>🛠 Tools for Digital & Print Zines</h3>
                 <ul>
-                    <li><a href="https://alienmelon.itch.io/electric-zine-maker">Electric Zine Maker</a> – Free, quirky printshop that lets you import, design, and format Zznes for printing.</li> 
-                    <li><a href="https://jeremyoduber.itch.io/js-zine">Make Your Zine Web and Mobile Friendly</a> – From the creator of Electric Zine Maker</li>
-                    <li><a href="https://heyzine.com/">HeyZine</a> – Host and view zines as flipbooks with additional interactive features</li> 
-                    <li><a href="https://www.scribus.net/">Scribus</a> – Free, open-source desktop publishing software for zine design.</li>
-                    <li><a href="https://www.canva.com/">Canva</a> – Beginner-friendly tool for simple digital zine layouts.</li>
-                    <li><a href="https://affinity.serif.com/">Affinity Publisher</a> – Affordable alternative to Adobe InDesign.</li>
+                    <li><a href="https://alienmelon.itch.io/electric-zine-maker"><strong>Electric Zine Maker</strong></a> – Free, quirky printshop that lets you import, design, and format Zznes for printing.</li> 
+                    <li><a href="https://jeremyoduber.itch.io/js-zine"><strong>Make Your Zine Web and Mobile Friendly<strong></a> – From the creator of Electric Zine Maker</li>
+                    <li><a href="https://heyzine.com/"><strong>HeyZine</strong></a> – Host and view zines as flipbooks with additional interactive features</li> 
+                    <li><a href="https://www.scribus.net/"><strong>Scribus</strong></a> – Free, open-source desktop publishing software for zine design.</li>
+                    <li><a href="https://www.canva.com/"><strong>Canva</strong></a> – Beginner-friendly tool for simple digital zine layouts.</li>
+                    <li><a href="https://affinity.serif.com/"><strong>Affinity Publisher</strong></a> – Affordable alternative to Adobe InDesign.</li>
                 </ul>
                 <!-- Suggested image: Side-by-side comparison of zine layout software interfaces. -->
             </section>
@@ -854,7 +937,7 @@ button:hover {
                     <p class="faq-answer">You never have to share anything. That said, part of the fun here is sharing your work. Never feel like you have to make work for others, but consider the power of spreading your message.</p>
                 </div>
                 <div class="faq-item">
-                    <h3 class="faq-question">What if I have more quesitons?</h3>
+                    <h3 class="faq-question">What if I have more questions?</h3>
                     <p class="faq-answer">Reach out. Nothing should stop your from zine-ing.</p>
                 </div>
             </section>
